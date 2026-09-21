@@ -1,0 +1,107 @@
+/* Compact hotspot dots — name appears on hover only */
+.label-element {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  user-select: none;
+  z-index: 16;
+}
+
+.label-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: transform 0.2s ease;
+}
+
+.label-inner:hover {
+  transform: scale(1.35);
+  z-index: 30;
+}
+
+.label-dot {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.label-ping {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0.55;
+  animation: ping 2.2s infinite cubic-bezier(0, 0, 0.2, 1);
+}
+
+.label-core {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 0 2px rgba(8, 12, 24, 0.75);
+}
+
+/* Name hidden by default — tooltip on hover */
+.label-text {
+  position: absolute;
+  left: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%) translateX(-4px);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: rgba(10, 14, 28, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
+  z-index: 40;
+}
+
+.label-inner:hover .label-text,
+.label-element.is-active .label-text {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Severity variants */
+.sev-low .label-core { background-color: #22c55e; }
+.sev-low .label-ping { background-color: #4ade80; }
+
+.sev-medium .label-core { background-color: #f59e0b; }
+.sev-medium .label-ping { background-color: #fbbf24; }
+
+.sev-high .label-core { background-color: #ef4444; }
+.sev-high .label-ping { background-color: #f87171; }
+
+.sev-critical .label-core {
+  background-color: #dc2626;
+  box-shadow: 0 0 0 2px rgba(8, 12, 24, 0.75), 0 0 10px #dc2626;
+}
+.sev-critical .label-ping {
+  background-color: #ff0000;
+  animation: ping-critical 1s infinite cubic-bezier(0, 0, 0.2, 1);
+}

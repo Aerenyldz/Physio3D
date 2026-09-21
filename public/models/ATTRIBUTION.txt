@@ -1,0 +1,4 @@
+Anatomical body model: body.glb (Z-Anatomy derivative)
+Source: https://github.com/hpfrei/body-anatomy-3d-viewer
+Upstream data: Z-Anatomy / BodyParts3D (CC BY-SA 4.0)
+File used as: muscular_skeleton.glb

@@ -1,0 +1,1411 @@
+// Physio3D Pro - Kapsamlı Tüm Vücut Patoloji Veritabanı (pathologiesData.js)
+// 47 patoloji, 11 vücut bölgesi
+
+export const PATHOLOGIES_DATABASE = [
+  // ═══════════════════════════════════════════════════════════════
+  // A. BAŞ & BOYUN BÖLGESİ (Head & Neck Region)
+  // ═══════════════════════════════════════════════════════════════
+  {
+    id: "neck_cervical_herniation",
+    region: "Boyun",
+    title: "Servikal Disk Hernisi (Boyun Fıtığı)",
+    latinName: "Hernia Disci Cervicalis (C5-C7)",
+    hotspotCoordinates: { x: 0.0, y: 14.5, z: -0.2 },
+    cameraTarget: { x: 0.0, y: 14.5, z: 2.5 },
+    severity: "Yüksek",
+    category: "Omurga-Sinir",
+    description: "Omurlar arasındaki kıkırdak diskin dışarı taşarak kollara giden sinir köklerine baskı yapması durumudur. Boyundan kola uzanan şiddetli ağrı ve uyuşma ile karakterizedir.",
+    symptoms: [
+      "Boyundan kola yayılan keskin ağrı",
+      "Parmaklarda uyuşma ve karıncalanma",
+      "Belirgin kas güçsüzlüğü",
+      "Boyun hareketlerinde kısıtlılık"
+    ],
+    affectedStructures: ["C5-C7 Sinir Kökleri", "Anulus Fibrosus", "Nucleus Pulposus"],
+    aggravatingMovements: [
+      "Boynu arkaya eğme (Ekstansiyon)",
+      "Başı ağrılı tarafa çevirme (Spurling testi)"
+    ],
+    rehabFocus: [
+      "Chin-tuck izometrikleri",
+      "Servikal traksiyon",
+      "Sinir kaydırma (Nerve gliding)",
+      "Nöral mobilizasyon"
+    ]
+  },
+  {
+    id: "neck_straightening",
+    region: "Boyun",
+    title: "Servikal Lordoz Kaybı (Boyun Düzleşmesi)",
+    latinName: "Loss of Cervical Lordosis / Upper Cross Syndrome",
+    hotspotCoordinates: { x: 0.0, y: 15.0, z: -0.5 },
+    cameraTarget: { x: 0.0, y: 15.0, z: 2.5 },
+    severity: "Orta",
+    category: "Omurga-Sinir",
+    description: "Masa başı ve telefon kullanımı sonucu boyunun doğal C-eğrisinin kaybolup C1-C7 omurlarının düzleşmesidir. Modern yaşamın en yaygın postüral bozukluğudur.",
+    symptoms: [
+      "Ense kökünde kronik sızlama",
+      "Servikojenik baş ağrısı",
+      "Omuzlarda ağırlık hissi",
+      "Hareket kısıtlılığı"
+    ],
+    affectedStructures: ["M. Trapezius", "M. Levator Scapulae", "Servikal Faset Eklemler"],
+    aggravatingMovements: [
+      "Uzun süre öne eğik baş pozisyonunda kalma (Text-Neck)"
+    ],
+    rehabFocus: [
+      "Postür düzeltme eğitimi",
+      "Pektoral germe",
+      "Derin boyun fleksörlerini güçlendirme"
+    ]
+  },
+
+  // ═══════════════════════════════════════════════════════════════
+  // B. OMUZ VE GÖĞÜS BÖLGESİ (Shoulder & Chest Complex)
+  // ═══════════════════════════════════════════════════════════════
+  {
+    id: "shoulder_impingement",
+    region: "Omuz",
+    title: "Rotator Cuff Sıkışma Sendromu",
+    latinName: "Subacromial Impingement Syndrome (SAIS)",
+    hotspotCoordinates: { x: 3.5, y: 13.2, z: 0.0 },
+    cameraTarget: { x: 3.5, y: 13.2, z: 3.0 },
+    severity: "Orta",
+    category: "Kas-Tendon",
+    description: "Kol yukarı kaldırıldığında supraspinatus tendonunun akromiyon kemiği ile humerus başı arasında sıkışmasıdır. Özellikle baş üstü hareketlerde ağrı oluşturur.",
+    symptoms: [
+      "Kolu 60°-120° arasında yana kaldırırken şiddetli ağrı (Ağrılı Ark)",
+      "Gece omuz üstüne yatamama",
+      "Kolda güçsüzlük hissi",
+      "Omuz üstünde hassasiyet"
+    ],
+    affectedStructures: ["M. Supraspinatus Tendonu", "Bursa Subacromialis", "Akromiyon"],
+    aggravatingMovements: [
+      "Lateral Raise",
+      "Overhead Press",
+      "Kolu baş üstüne kaldırma"
+    ],
+    rehabFocus: [
+      "Scapular dyskinesis düzeltme",
+      "Subakromiyal mesafe açma",
+      "Skapular stabilizatörlerin güçlendirilmesi"
+    ]
+  },
+  {
+    id: "shoulder_pectoralis_strain",
+    region: "Omuz",
+    title: "Pektoralis Majör Tendinopatisi & Ödem",
+    latinName: "Pectoralis Major Insertional Tendinopathy",
+    hotspotCoordinates: { x: 2.2, y: 12.5, z: 0.8 },
+    cameraTarget: { x: 2.2, y: 12.5, z: 3.5 },
+    severity: "Orta",
+    category: "Kas-Tendon",
+    description: "Göğüs kasının omuz kemiğine bağlandığı liflerde aşırı mekanik gerilmeye bağlı gelişen doku ödemi ve mikrotravmadır.",
+    symptoms: [
+      "Göğüs-omuz birleşiminde sızlama",
+      "Göğüs kasını sıkınca batma ağrısı",
+      "Lokalize hassasiyet",
+      "Kolda internal rotasyon güçlüğü"
+    ],
+    affectedStructures: ["Pectoralis Major Tendonu", "Bicipital Oluk Çevresi", "Anterior Kapsül"],
+    aggravatingMovements: [
+      "Chest Fly (Göğüs Açış)",
+      "Dips",
+      "Derin Bench Press (kollar gövde gerisine düşünce)"
+    ],
+    rehabFocus: [
+      "Soğuk Terapi (Kriyoterapi)",
+      "Ağrısız İzometrik Kasılma",
+      "Modifiye Presler (Floor Press)"
+    ]
+  },
+  {
+    id: "shoulder_frozen_shoulder",
+    region: "Omuz",
+    title: "Adhezif Kapsülit (Donuk Omuz)",
+    latinName: "Adhesive Capsulitis",
+    hotspotCoordinates: { x: 3.2, y: 13.0, z: -0.3 },
+    cameraTarget: { x: 3.2, y: 13.0, z: 3.0 },
+    severity: "Yüksek",
+    category: "Eklem-Bağ",
+    description: "Omuz eklem kapsülünün iltihaplanarak kalınlaşması ve eklem hareket açıklığının neredeyse tamamen kaybolması durumudur. Üç fazda ilerler: donma, donuk, çözülme.",
+    symptoms: [
+      "Tüm yönlerde şiddetli aktif ve pasif hareket kısıtlılığı",
+      "Şiddetli gece ağrısı",
+      "Günlük aktivitelerde ciddi zorlanma",
+      "Omuzda sürekli tutukluk"
+    ],
+    affectedStructures: ["Glenohumeral Eklem Kapsülü (Fibrozis ve Kalınlaşma)"],
+    aggravatingMovements: [
+      "Saç tarama",
+      "Arkadaki cebe ulaşma",
+      "Dışa rotasyon hareketi"
+    ],
+    rehabFocus: [
+      "Sarkaç (Pendulum) egzersizleri",
+      "Kademeli pasif eklem mobilizasyonu",
+      "Kapsüler germeler"
+    ]
+  },
+
+  // ═══════════════════════════════════════════════════════════════
+  // C. DİRSEK BÖLGESİ (Elbow Region)
+  // ═══════════════════════════════════════════════════════════════
+  {
+    id: "elbow_lateral_epicondylitis",
+    region: "Dirsek",
+    title: "Lateral Epikondilit (Tenisçi Dirseği)",
+    latinName: "Lateral Epicondylitis (Tendinosis)",
+    hotspotCoordinates: { x: 5.8, y: 9.5, z: 0.2 },
+    cameraTarget: { x: 5.8, y: 9.5, z: 3.0 },
+    severity: "Orta",
+    category: "Kas-Tendon",
+    description: "Ön kol ekstansör kaslarının dirseğin dış tarafındaki kemik çıkıntısına yapıştığı tendondaki mikroyırtık ve dejenerasyondur.",
+    symptoms: [
+      "Dirseğin dış yüzünde keskin ağrı",
+      "Nesneleri kavrarken elden düşürme",
+      "Zayıf kavrama kuvveti",
+      "El bileği hareketlerinde ağrı"
+    ],
+    affectedStructures: ["M. Extensor Carpi Radialis Brevis (ECRB) Tendonu", "Lateral Epikondil"],
+    aggravatingMovements: [
+      "El bileği ekstansyonu",
+      "Kavrama (grip) hareketleri",
+      "Kapı kolu çevirme"
+    ],
+    rehabFocus: [
+      "Ekzantrik yükleme (Tyler Twist)",
+      "El bileği ekstansör germeleri",
+      "Derin doku masajı"
+    ]
+  },
+  {
+    id: "elbow_medial_epicondylitis",
+    region: "Dirsek",
+    title: "Medial Epikondilit (Golfçü Dirseği)",
+    latinName: "Medial Epicondylitis",
+    hotspotCoordinates: { x: 5.2, y: 9.3, z: -0.2 },
+    cameraTarget: { x: 5.2, y: 9.3, z: 3.0 },
+    severity: "Orta",
+    category: "Kas-Tendon",
+    description: "Dirseğin iç tarafındaki kemik çıkıntısında fleksör tendon grubunun aşırı kullanımı sonucu oluşan iltihabi zorlanmadır.",
+    symptoms: [
+      "Dirseğin iç kısmında hassasiyet",
+      "Yumruk yaparken ağrı",
+      "El bileğini içe bükünce ağrı",
+      "Kavrama güçsüzlüğü"
+    ],
+    affectedStructures: ["Ön Kol Fleksör Kas Tendonları", "Medial Epikondil"],
+    aggravatingMovements: [
+      "Wrist Curls",
+      "Lat Pulldown tutuşu",
+      "Şiddetli yumruk sıkma"
+    ],
+    rehabFocus: [
+      "Ön kol fleksör ekzantrik güçlendirme",
+      "Medyal bandaj desteği",
+      "İzometrik el bileği egzersizleri"
+    ]
+  },
+
+  // ═══════════════════════════════════════════════════════════════
+  // D. EL VE EL BİLEĞİ BÖLGESİ (Wrist & Hand Region)
+  // ═══════════════════════════════════════════════════════════════
+  {
+    id: "wrist_carpal_tunnel",
+    region: "El Bileği",
+    title: "Karpal Tünel Sendromu",
+    latinName: "Carpal Tunnel Syndrome (CTS)",
+    hotspotCoordinates: { x: 7.2, y: 6.8, z: 0.3 },
+    cameraTarget: { x: 7.2, y: 6.8, z: 2.5 },
+    severity: "Orta",
+    category: "Omurga-Sinir",
+    description: "El bileğindeki dar kanaldan geçen median sinirin doku şişliği veya kronik basınç nedeniyle sıkışmasıdır. Modern çalışma hayatının en yaygın sinir sıkışma sendromudur.",
+    symptoms: [
+      "Baş, işaret, orta ve yüzük parmağın yarısında uyuşma",
+      "Gece uykudan uyandıran karıncalanma ve yanma",
+      "Elden eşya düşürme",
+      "İnce motor becerilerde azalma"
+    ],
+    affectedStructures: ["Nervus Medianus (Median Sinir)", "Flexor Retinaculum", "Karpal Tünel"],
+    aggravatingMovements: [
+      "Uzun süre klavye/fare kullanımı",
+      "El bileği fleksiyonda bekleme (Phalen testi)"
+    ],
+    rehabFocus: [
+      "Gece atelleme (splint)",
+      "Median sinir kaydırma (nerve gliding)",
+      "Karpal tünel mobilizasyonu"
+    ]
+  },
+  {
+    id: "wrist_de_quervain",
+    region: "El Bileği",
+    title: "De Quervain Tenosinoviti (Başparmak Tendiniti)",
+    latinName: "De Quervain Stenosing Tenosynovitis",
+    hotspotCoordinates: { x: 7.5, y: 6.5, z: 0.1 },
+    cameraTarget: { x: 7.5, y: 6.5, z: 2.5 },
+    severity: "Orta",
+    category: "Kas-Tendon",
+    description: "Başparmağı hareket ettiren tendonların el bileğinin başparmak tarafındaki kılıf içinde sıkışması ve iltihaplanmasıdır.",
+    symptoms: [
+      "El bileğinin başparmak hizasında şişlik",
+      "Keskin batma ağrısı (Finkelstein testi pozitif)",
+      "Başparmak hareketlerinde ağrı",
+      "Kavramada güçlük"
+    ],
+    affectedStructures: ["APL (Abductor Pollicis Longus) Tendonu", "EPB (Extensor Pollicis Brevis) Tendon Kılıfları"],
+    aggravatingMovements: [
+      "Telefon ekranında başparmak kaydırma",
+      "Bebek kaldırma",
+      "Şişe kapağı açma"
+    ],
+    rehabFocus: [
+      "Spica ateli",
+      "Başparmak izometrikleri",
+      "Tendon kaydırma egzersizleri"
+    ]
+  },
+
+  // ═══════════════════════════════════════════════════════════════
+  // E. BEL VE PELVİS BÖLGESİ (Lumbar Spine & Pelvis)
+  // ═══════════════════════════════════════════════════════════════
+  {
+    id: "lumbar_disc_herniation",
+    region: "Bel",
+    title: "Lomber Disk Hernisi (Bel Fıtığı)",
+    latinName: "Hernia Disci Lumbalis (L4-S1)",
+    hotspotCoordinates: { x: 0.0, y: 9.8, z: -0.6 },
+    cameraTarget: { x: 0.0, y: 9.8, z: 3.0 },
+    severity: "Yüksek",
+    category: "Omurga-Sinir",
+    description: "Bel omurları arasındaki jelimsi diskin dışa kayarak omurilikten çıkan sinir köklerine baskı yapmasıdır. Siyatik ağrının en sık nedenidir.",
+    symptoms: [
+      "Belden kalçaya ve bacağa yayılan elektrik çarpması şeklinde ağrı (Siyatik)",
+      "Ayak başparmağında güçsüzlük (düşük ayak riski)",
+      "Belde kilitlenme",
+      "Öksürme/hapşırma ile artan ağrı"
+    ],
+    affectedStructures: ["L4-L5 / L5-S1 İntervertebral Disk", "Nervus Ischiadicus (Siyatik Sinir)"],
+    aggravatingMovements: [
+      "Öne eğilme (Fleksiyon)",
+      "Ağır kaldırma",
+      "Öne eğilerek rotasyon",
+      "Düz bacak kaldırma (SLR)"
+    ],
+    rehabFocus: [
+      "McKenzie ekstansiyon egzersizleri",
+      "Core stabilizasyonu (Bird-Dog, Planks)",
+      "Lomber traksiyon"
+    ]
+  },
+  {
+    id: "pelvis_piriformis_syndrome",
+    region: "Pelvis",
+    title: "Piriformis Sendromu (Yalancı Siyatik)",
+    latinName: "Piriformis Syndrome",
+    hotspotCoordinates: { x: 1.2, y: 8.2, z: -0.8 },
+    cameraTarget: { x: 1.2, y: 8.2, z: 2.5 },
+    severity: "Orta",
+    category: "Kas-Tendon",
+    description: "Kalçanın derinindeki piriformis kasının spazma girerek hemen altından geçen siyatik siniri sıkıştırmasıdır. Bel fıtığı ile sıklıkla karıştırılır.",
+    symptoms: [
+      "Derin kalça yanağında ağrı",
+      "Uyluk arkasına yayılan uyuşma",
+      "Uzun süre oturmakla artan sızlama",
+      "Kalça hareketlerinde kısıtlılık"
+    ],
+    affectedStructures: ["M. Piriformis", "Nervus Ischiadicus (Siyatik Sinir)"],
+    aggravatingMovements: [
+      "Uzun süre sert zeminde oturma",
+      "Uyluk iç rotasyonu"
+    ],
+    rehabFocus: [
+      "Piriformis germesi (Pigeon pose)",
+      "Köpük rulo miyofasiyal gevşetme",
+      "Gluteal güçlendirme"
+    ]
+  },
+
+  // ═══════════════════════════════════════════════════════════════
+  // F. KALÇA VE KASIK BÖLGESİ (Hip & Groin Region)
+  // ═══════════════════════════════════════════════════════════════
+  {
+    id: "hip_fai_impingement",
+    region: "Kalça",
+    title: "Femoroasetabular Sıkışma (FAI)",
+    latinName: "Femoroacetabular Impingement (Cam / Pincer)",
+    hotspotCoordinates: { x: 2.1, y: 8.5, z: 0.2 },
+    cameraTarget: { x: 2.1, y: 8.5, z: 3.0 },
+    severity: "Orta",
+    category: "Kıkırdak-Bursa",
+    description: "Kalça eklemini oluşturan kemikler arasındaki anormallik nedeniyle eklem hareket ederken kıkırdak ve labrumun sıkışmasıdır.",
+    symptoms: [
+      "Kasık bölgesinde 'C işareti' şeklinde derin ağrı",
+      "Çömelirken kalçada takılma ve batma hissi",
+      "Uzun süre oturunca artan ağrı",
+      "Kalça hareket açıklığında azalma"
+    ],
+    affectedStructures: ["Femur Başı", "Asetabulum", "Kalça Labrumu"],
+    aggravatingMovements: [
+      "Derin Squat",
+      "Kalça fleksyonu ve iç rotasyonu (FADIR testi)"
+    ],
+    rehabFocus: [
+      "Kalça mobilizasyonu",
+      "Derin kalça stabilizatörleri güçlendirme",
+      "Aşırı fleksyondan kaçınma"
+    ]
+  },
+  {
+    id: "hip_trochanteric_bursitis",
+    region: "Kalça",
+    title: "Trokanterik Bursit (Kalça Yan Ağrısı)",
+    latinName: "Greater Trochanteric Pain Syndrome (GTPS)",
+    hotspotCoordinates: { x: 3.2, y: 8.0, z: -0.1 },
+    cameraTarget: { x: 3.2, y: 8.0, z: 3.0 },
+    severity: "Orta",
+    category: "Kıkırdak-Bursa",
+    description: "Uyluk kemiğinin dış yanındaki kemik çıkıntısının üzerindeki bursa kesesinin iltihaplanmasıdır.",
+    symptoms: [
+      "Kalçanın tam yan tarafında keskin ağrı",
+      "Gece ağrılı yan tarafa yatamama",
+      "Merdiven çıkarken ağrı",
+      "Kalça dışında hassasiyet"
+    ],
+    affectedStructures: ["Bursa Trochanterica", "M. Gluteus Medius Tendonu", "M. Gluteus Minimus Tendonu"],
+    aggravatingMovements: [
+      "Yandan bacak kaldırma (abduksiyon)",
+      "Ağrılı tarafa yatma",
+      "Uzun yürüyüşler"
+    ],
+    rehabFocus: [
+      "Gluteus Medius güçlendirme",
+      "ITB (İlyotibiyal Bant) gevşetme",
+      "Lokal soğuk uygulama"
+    ]
+  },
+
+  // ═══════════════════════════════════════════════════════════════
+  // G. DİZ BÖLGESİ (Knee Region)
+  // ═══════════════════════════════════════════════════════════════
+  {
+    id: "knee_acl_tear",
+    region: "Diz",
+    title: "Ön Çapraz Bağ (ACL) Yırtığı",
+    latinName: "Anterior Cruciate Ligament (ACL) Rupture",
+    hotspotCoordinates: { x: 1.8, y: 4.5, z: 0.4 },
+    cameraTarget: { x: 1.8, y: 4.5, z: 2.5 },
+    severity: "Kritik",
+    category: "Eklem-Bağ",
+    description: "Dizin dönme ve ani durma hareketlerinde uyluk ile kaval kemiğini bağlayan ön çapraz bağın kopması veya dereceli yırtılmasıdır.",
+    symptoms: [
+      "Yaralanma anında dizden 'POP' sesi",
+      "Anında şiddetli şişlik (hemartroz)",
+      "Dizde güvensizlik ve 'boşalma' hissi",
+      "Yürümede belirgin aksama"
+    ],
+    affectedStructures: ["Ligamentum Cruciatum Anterius (ACL)", "Diz Eklem Kapsülü"],
+    aggravatingMovements: [
+      "Ani yön değiştirme (Pivot)",
+      "Sıçrama sonrası kötü iniş",
+      "Dize dıştan gelen darbe (Valgus stresi)"
+    ],
+    rehabFocus: [
+      "Quadriceps ve Hamstring nöromüsküler kontrolü",
+      "Propriyosepsiyon / denge eğitimi",
+      "Kademeli yükleme protokolü"
+    ]
+  },
+  {
+    id: "knee_patellofemoral_syndrome",
+    region: "Diz",
+    title: "Patellofemoral Ağrı Sendromu (Koşucu Dizi)",
+    latinName: "Patellofemoral Pain Syndrome (PFPS)",
+    hotspotCoordinates: { x: 1.8, y: 4.8, z: 0.6 },
+    cameraTarget: { x: 1.8, y: 4.8, z: 2.5 },
+    severity: "Orta",
+    category: "Kıkırdak-Bursa",
+    description: "Diz kapağının uyluk kemiği üzerindeki olukta düzgün kaymaması sonucu diz kapağı arkasındaki kıkırdağın tahriş olmasıdır.",
+    symptoms: [
+      "Diz kapağının önünde künt sızlama",
+      "Merdiven inerken ağrı",
+      "Uzun süre oturduktan sonra ayağa kalkarken ağrı (Sinema Belirtisi)",
+      "Diz kapağı çevresinde hassasiyet"
+    ],
+    affectedStructures: ["Patella Kıkırdağı", "Troklear Oluk", "VMO (Vastus Medialis Obliquus)"],
+    aggravatingMovements: [
+      "Merdiven inme/çıkma",
+      "Leg Extension",
+      "Uzun süreli bükülü diz pozisyonu"
+    ],
+    rehabFocus: [
+      "VMO güçlendirme",
+      "Gluteal kas güçlendirme (valgus önleme)",
+      "Patellar taping (bantlama)"
+    ]
+  },
+  {
+    id: "knee_meniscus_tear",
+    region: "Diz",
+    title: "Menisküs Yırtığı (Medial/Lateral)",
+    latinName: "Meniscal Tear (Medial / Lateral)",
+    hotspotCoordinates: { x: 1.5, y: 4.3, z: 0.3 },
+    cameraTarget: { x: 1.5, y: 4.3, z: 2.5 },
+    severity: "Yüksek",
+    category: "Kıkırdak-Bursa",
+    description: "Diz eklemindeki şok emici kıkırdak halkaların dönme veya yaşlanmaya bağlı aşınma sonucu yırtılmasıdır.",
+    symptoms: [
+      "Dizde mekanik 'kilitlenme' hissi",
+      "Eklem çizgisinde noktasal hassasiyet",
+      "Çömelmede ağrı",
+      "Dizde 'takılma' ve şişlik"
+    ],
+    affectedStructures: ["Medial Menisküs", "Lateral Menisküs (Fibrokıkırdak Diskler)"],
+    aggravatingMovements: [
+      "Derin tam çömelme (Squat)",
+      "Diz bükülüyken dönme (McMurray testi)"
+    ],
+    rehabFocus: [
+      "Eklem içi yükü azaltma",
+      "Hamstring/Quadriceps dengeleme",
+      "Ağrısız eklem açıklığı egzersizleri"
+    ]
+  },
+
+  // ═══════════════════════════════════════════════════════════════
+  // H. AYAK BİLEĞİ VE TOPUK BÖLGESİ (Ankle & Foot Region)
+  // ═══════════════════════════════════════════════════════════════
+  {
+    id: "ankle_sprain_atfl",
+    region: "Ayak Bileği",
+    title: "Ayak Bileği Burkulması (ATFL Yırtığı)",
+    latinName: "Lateral Ankle Sprain (ATFL)",
+    hotspotCoordinates: { x: 1.9, y: 1.2, z: 0.1 },
+    cameraTarget: { x: 1.9, y: 1.2, z: 2.0 },
+    severity: "Orta",
+    category: "Eklem-Bağ",
+    description: "Ayak bileğinin içe dönmesi (inversiyon) sonucu dış taraftaki bağların esnemesi veya kopmasıdır. En sık görülen spor yaralanmalarından biridir.",
+    symptoms: [
+      "Dış ayak bileğinde şiddetli şişlik ve morarma",
+      "Üstüne basamama",
+      "Lokalize hassasiyet",
+      "Eklemde güvensizlik hissi"
+    ],
+    affectedStructures: ["ATFL (Anterior Talofibular Ligament)", "CFL (Calcaneofibular Ligament)"],
+    aggravatingMovements: [
+      "Düzensiz zemine basma",
+      "İnversiyon mekanizması"
+    ],
+    rehabFocus: [
+      "PEACE & LOVE protokolü",
+      "Denge tahtası propriyosepsiyon eğitimi",
+      "Fibularis kas güçlendirme"
+    ]
+  },
+  {
+    id: "ankle_achilles_tendinopathy",
+    region: "Ayak Bileği",
+    title: "Aşil Tendinopatisi (Aşil Tendiniti)",
+    latinName: "Achilles Tendinopathy",
+    hotspotCoordinates: { x: 1.5, y: 1.5, z: -0.6 },
+    cameraTarget: { x: 1.5, y: 1.5, z: 2.0 },
+    severity: "Yüksek",
+    category: "Kas-Tendon",
+    description: "Vücudun en güçlü tendonunun aşırı kullanımına bağlı olarak liflerinde meydana gelen mikro bozulma ve kalınlaşmadır.",
+    symptoms: [
+      "Sabah ilk adımlarda topuk arkasında sertlik ve keskin ağrı",
+      "Koşu sırasında tendon boyunca sızlama",
+      "Tendonda şişlik ve kalınlaşma",
+      "Parmak ucuna yükselmede güçlük"
+    ],
+    affectedStructures: ["Tendo Calcaneus (Aşil Tendonu)", "M. Gastrocnemius", "M. Soleus"],
+    aggravatingMovements: [
+      "Parmak ucuna yükselme (Calf Raise)",
+      "Tempolu koşu",
+      "Zıplama hareketleri"
+    ],
+    rehabFocus: [
+      "Alfredson protokolü (Ekzantrik calf raise)",
+      "Heel drop egzersizleri",
+      "Kalf germe programı"
+    ]
+  },
+  {
+    id: "foot_plantar_fasciitis",
+    region: "Ayak",
+    title: "Plantar Fasiit (Topuk Dikeni)",
+    latinName: "Plantar Fasciitis",
+    hotspotCoordinates: { x: 1.5, y: 0.3, z: 0.2 },
+    cameraTarget: { x: 1.5, y: 0.3, z: 2.0 },
+    severity: "Orta",
+    category: "Kas-Tendon",
+    description: "Ayak tabanını kaplayan kalın doku bandının topuk kemiğine yapıştığı noktadaki kronik mikrotravma ve iltihaptır.",
+    symptoms: [
+      "Sabah ilk adımda topuk altında bıçak saplanır gibi ağrı",
+      "Günün ilerleyen saatlerinde hafifleme",
+      "Uzun süre ayakta kalınca artan sızlama",
+      "Topuk altında hassasiyet"
+    ],
+    affectedStructures: ["Plantar Fasya", "Medial Tubercle of Calcaneus"],
+    aggravatingMovements: [
+      "Yalınayak sert zeminde yürüme",
+      "Uzun süreli ayakta durma"
+    ],
+    rehabFocus: [
+      "Soğuk şişe/top yuvarlama masajı",
+      "Plantar fasya ve aşil germeleri",
+      "Ortotik tabanlık kullanımı"
+    ]
+  },
+
+  // ═══════════════════════════════════════════════════════════════
+  // I. GENİŞLETİLMİŞ KAS / BÖLGE PATOLOJİLERİ (Prototype +13 → 32)
+  // ═══════════════════════════════════════════════════════════════
+  {
+    id: "back_latissimus_strain",
+    region: "Sırt",
+    title: "Latissimus Dorsi Zorlanması",
+    latinName: "Latissimus Dorsi Strain",
+    hotspotCoordinates: { x: 2.4, y: 11.2, z: -0.7 },
+    cameraTarget: { x: 2.4, y: 11.2, z: 3.2 },
+    severity: "Orta",
+    category: "Kas-Tendon",
+    description: "Sırtın yan-arka 'kanat' kasının (latissimus dorsi) aşırı gerilmesi veya mikro yırtığıdır. Özellikle üst lat / skapula altı bölgede hissedilir.",
+    symptoms: [
+      "Sırtın yan tarafında, lat bölgesinde sızlama",
+      "Kol yukarı kaldırınca veya çekme hareketinde artan ağrı",
+      "Derin nefeste hafif batma",
+      "Skapula altı / üst bel yanına yayılan hassasiyet"
+    ],
+    affectedStructures: ["M. Latissimus Dorsi", "Torakolomber Fasya"],
+    aggravatingMovements: [
+      "Pull-up / lat pulldown",
+      "Kol overhead kaldırma",
+      "Gövde rotasyonu ile yük kaldırma"
+    ],
+    rehabFocus: [
+      "Latissimus germe",
+      "Skapular stabilizasyon",
+      "Yükü kademeli artırma"
+    ]
+  },
+  {
+    id: "back_rhomboid_strain",
+    region: "Sırt",
+    title: "Romboid Kas Gerilimi",
+    latinName: "Rhomboid Major/Minor Strain",
+    hotspotCoordinates: { x: 1.1, y: 12.6, z: -0.85 },
+    cameraTarget: { x: 1.1, y: 12.6, z: 3.0 },
+    severity: "Düşük",
+    category: "Kas-Tendon",
+    description: "Kürek kemikleri arasında yer alan romboid kasların postüral aşırı kullanımı veya ani gerilmesidir.",
+    symptoms: [
+      "Kürek kemikleri arasında yanma / sızlama",
+      "Uzun oturuşta artan orta sırt ağrısı",
+      "Skapulayı geri çekince rahatlama veya batma",
+      "Tek taraflı 'düğüm' hissi"
+    ],
+    affectedStructures: ["M. Rhomboid Major", "M. Rhomboid Minor"],
+    aggravatingMovements: [
+      "Öne kambur oturuş",
+      "Ağır çanta taşıma",
+      "Tekrarlayan skapular retraksiyon"
+    ],
+    rehabFocus: [
+      "Göğüs germe + romboid gevşetme",
+      "Skapular kontrol egzersizleri",
+      "Ergonomi düzenlemesi"
+    ]
+  },
+  {
+    id: "thoracic_facet_syndrome",
+    region: "Sırt",
+    title: "Torakal Faset Sendromu",
+    latinName: "Thoracic Facet Joint Dysfunction",
+    hotspotCoordinates: { x: 0.0, y: 11.8, z: -0.55 },
+    cameraTarget: { x: 0.0, y: 11.8, z: 3.0 },
+    severity: "Orta",
+    category: "Omurga-Sinir",
+    description: "Orta sırt omurlarının küçük eklemlerinde mekanik kilitlenme veya irritasyondur; derin, lokalize sırt ağrısı yapar.",
+    symptoms: [
+      "Orta sırta noktasal batıcı ağrı",
+      "Gövdeyi döndürünce artma",
+      "Derin nefeste rahatsızlık",
+      "Sırtta 'kilitlenme' hissi"
+    ],
+    affectedStructures: ["Torakal Faset Eklemler", "M. Erector Spinae"],
+    aggravatingMovements: [
+      "Gövde rotasyonu",
+      "Uzun süre sabit oturuş",
+      "Ani eğilme-dönme"
+    ],
+    rehabFocus: [
+      "Torakal mobilizasyon",
+      "Ekstansiyon egzersizleri",
+      "Postür eğitimi"
+    ]
+  },
+  {
+    id: "neck_trapezius_myalgia",
+    region: "Boyun",
+    title: "Üst Trapezius Miyaljisi",
+    latinName: "Upper Trapezius Myalgia",
+    hotspotCoordinates: { x: 1.6, y: 14.4, z: -0.35 },
+    cameraTarget: { x: 1.6, y: 14.4, z: 2.8 },
+    severity: "Düşük",
+    category: "Kas-Tendon",
+    description: "Omuz-ense geçişindeki üst trapezius kasında kronik gerilim ve tetik nokta kaynaklı ağrıdır.",
+    symptoms: [
+      "Ense-omuz birleşiminde sızlama",
+      "Baş ağrısına yayılma (servikojenik)",
+      "Omuzlarda ağırlık / sertlik",
+      "Stresle artan kas gerginliği"
+    ],
+    affectedStructures: ["M. Trapezius (üst lifler)", "M. Levator Scapulae"],
+    aggravatingMovements: [
+      "Omuz silkme / omuzları kulaklara çekme",
+      "Uzun süre bilgisayar kullanımı",
+      "Telefonu omuzla tutma"
+    ],
+    rehabFocus: [
+      "Üst trap germe",
+      "Derin boyun fleksör güçlendirme",
+      "Skapular depresyon egzersizleri"
+    ]
+  },
+  {
+    id: "lumbar_muscle_strain",
+    region: "Bel",
+    title: "Lomber Kas Zorlanması",
+    latinName: "Lumbar Muscle Strain",
+    hotspotCoordinates: { x: 0.0, y: 9.4, z: -0.7 },
+    cameraTarget: { x: 0.0, y: 9.4, z: 3.0 },
+    severity: "Orta",
+    category: "Kas-Tendon",
+    description: "Bel kaslarının (erector spinae / multifidus) ani kaldırma veya yanlış postürle zorlanmasıdır; fıtıktan daha yüzeysel ve mekaniktir.",
+    symptoms: [
+      "Belde lokalize kas ağrısı",
+      "Öne eğilince artma",
+      "Kas spazmı / sertlik",
+      "Bacağa yayılmayan (veya çok hafif) ağrı"
+    ],
+    affectedStructures: ["M. Erector Spinae", "M. Multifidus", "Torakolomber Fasya"],
+    aggravatingMovements: [
+      "Ağır kaldırma",
+      "Ani öne eğilme",
+      "Uzun süre ayakta sabit durma"
+    ],
+    rehabFocus: [
+      "Erken mobilizasyon",
+      "Core aktivasyonu",
+      "Kaldırma tekniği eğitimi"
+    ]
+  },
+  {
+    id: "shoulder_biceps_tendinopathy",
+    region: "Omuz",
+    title: "Biseps Tendinopatisi",
+    latinName: "Long Head of Biceps Tendinopathy",
+    hotspotCoordinates: { x: 3.2, y: 12.4, z: 0.35 },
+    cameraTarget: { x: 3.2, y: 12.4, z: 3.0 },
+    severity: "Orta",
+    category: "Kas-Tendon",
+    description: "Biseps uzun baş tendonunun omuz önünde aşırı kullanımına bağlı inflamasyon / dejenerasyondur.",
+    symptoms: [
+      "Omuz önünde noktasal ağrı",
+      "Kol öne kaldırmada artma",
+      "Biceps oluğunda hassasiyet",
+      "Ağır kaldırmada batma"
+    ],
+    affectedStructures: ["Tendon Capitis Longi M. Bicipitis", "Sulcus Intertubercularis"],
+    aggravatingMovements: [
+      "Shoulder flexion / curl",
+      "Overhead press",
+      "Tekrarlayan kaldırma"
+    ],
+    rehabFocus: [
+      "Eksantrik biceps yükleme",
+      "Skapular kontrol",
+      "Aktivite modifikasyonu"
+    ]
+  },
+  {
+    id: "wrist_tfcc",
+    region: "El Bileği",
+    title: "TFCC Yaralanması",
+    latinName: "Triangular Fibrocartilage Complex Injury",
+    hotspotCoordinates: { x: 4.0, y: 7.6, z: 0.15 },
+    cameraTarget: { x: 4.0, y: 7.6, z: 2.5 },
+    severity: "Orta",
+    category: "Kıkırdak-Bursa",
+    description: "El bileğinin küçük parmak tarafındaki kıkırdak-bağ kompleksinin burkulma veya tekrarlayan yükle yaralanmasıdır.",
+    symptoms: [
+      "El bileği ulnar (iç) tarafta ağrı",
+      "Kapı açma / yük taşıma ile artma",
+      "Bilek rotasyonunda klik / batma",
+      "Güçsüz kavrama hissi"
+    ],
+    affectedStructures: ["TFCC", "Ulnar Styloid", "Distal Radioulnar Eklem"],
+    aggravatingMovements: [
+      "Bilek ulnar deviasyon",
+      "Ağırlık taşıma",
+      "Push-up pozisyonu"
+    ],
+    rehabFocus: [
+      "Bilek stabilizasyon",
+      "Propriyosepsiyon",
+      "Yük yönetimi"
+    ]
+  },
+  {
+    id: "pelvis_si_joint",
+    region: "Pelvis",
+    title: "Sakroiliak Eklem Disfonksiyonu",
+    latinName: "Sacroiliac Joint Dysfunction",
+    hotspotCoordinates: { x: 0.9, y: 8.4, z: -0.55 },
+    cameraTarget: { x: 0.9, y: 8.4, z: 2.8 },
+    severity: "Orta",
+    category: "Eklem-Bağ",
+    description: "Sakrum ile iliak kemik arasındaki eklemin mekanik dengesizliğidir; tek taraflı bel-kalça geçiş ağrısı yapar.",
+    symptoms: [
+      "Bel-kalça birleşiminde tek taraflı ağrı",
+      "Oturup kalkarken batma",
+      "Merdiven / uzun yürüyüşte artma",
+      "Bacağa sınırlı yayılım"
+    ],
+    affectedStructures: ["Art. Sacroiliaca", "Ligamenta Sacroiliaca"],
+    aggravatingMovements: [
+      "Tek bacak üstüne yüklenme",
+      "Uzun oturuş",
+      "Asimetrik kaldırma"
+    ],
+    rehabFocus: [
+      "SI stabilizasyon",
+      "Gluteal aktivasyon",
+      "Pelvik kontrol egzersizleri"
+    ]
+  },
+  {
+    id: "hip_itband_syndrome",
+    region: "Kalça",
+    title: "İlyotibiyal Bant Sendromu",
+    latinName: "Iliotibial Band Syndrome (ITBS)",
+    hotspotCoordinates: { x: 2.9, y: 6.2, z: 0.05 },
+    cameraTarget: { x: 2.9, y: 6.2, z: 2.8 },
+    severity: "Orta",
+    category: "Kas-Tendon",
+    description: "Uyluk dış yanındaki IT bandın diz/kalça dışında sürtünmesiyle oluşan koşucu yaralanmasıdır.",
+    symptoms: [
+      "Diz veya kalça dışında yanıcı ağrı",
+      "Koşu mesafesi artınca şiddetlenme",
+      "Merdiven inmede batma",
+      "Dış yana dokununca hassasiyet"
+    ],
+    affectedStructures: ["Tractus Iliotibialis", "M. Tensor Fasciae Latae", "M. Gluteus Medius"],
+    aggravatingMovements: [
+      "Tempolu koşu",
+      "Yokuş inme",
+      "Tekrarlayan diz fleksiyon-ekstansiyon"
+    ],
+    rehabFocus: [
+      "Kalça abdüktör güçlendirme",
+      "ITB miyofasiyal gevşetme",
+      "Koşu yükü azaltma"
+    ]
+  },
+  {
+    id: "thigh_hamstring_strain",
+    region: "Kalça",
+    title: "Hamstring Zorlanması",
+    latinName: "Hamstring Strain",
+    hotspotCoordinates: { x: 1.9, y: 5.6, z: -0.45 },
+    cameraTarget: { x: 1.9, y: 5.6, z: 2.8 },
+    severity: "Yüksek",
+    category: "Kas-Tendon",
+    description: "Uyluk arkasındaki hamstring kas grubunun sprint veya ani gerilmeyle zorlanması / kısmi yırtığıdır.",
+    symptoms: [
+      "Uyluk arkasında ani keskin ağrı",
+      "Koşarken veya esnerken batma",
+      "Otururken baskıyla hassasiyet",
+      "Diz bükmede güç azalması"
+    ],
+    affectedStructures: ["M. Biceps Femoris", "M. Semitendinosus", "M. Semimembranosus"],
+    aggravatingMovements: [
+      "Sprint / ani hızlanma",
+      "Öne eğilerek bacak germe",
+      "Deadlift form hatası"
+    ],
+    rehabFocus: [
+      "Eksantrik Nordic curl progresyonu",
+      "Kademeli koşu dönüşü",
+      "Pelvik kontrol"
+    ]
+  },
+  {
+    id: "knee_mcl_sprain",
+    region: "Diz",
+    title: "İç Yan Bağ (MCL) Burkulması",
+    latinName: "Medial Collateral Ligament Sprain",
+    hotspotCoordinates: { x: 1.45, y: 4.45, z: 0.25 },
+    cameraTarget: { x: 1.45, y: 4.45, z: 2.5 },
+    severity: "Yüksek",
+    category: "Eklem-Bağ",
+    description: "Dizin iç yan bağının valgus (içeri açılma) stresiyle gerilmesi veya kısmi yırtığıdır.",
+    symptoms: [
+      "Diz iç yanına lokalize ağrı",
+      "Valgus stresinde artma",
+      "Hafif-orta şişlik",
+      "Dizde güvensizlik hissi"
+    ],
+    affectedStructures: ["Ligamentum Collaterale Mediale (MCL)"],
+    aggravatingMovements: [
+      "Dize dıştan darbe",
+      "Ani yön değiştirme",
+      "Tek ayak pivot"
+    ],
+    rehabFocus: [
+      "Erken korumalı hareket",
+      "Quadriceps / hamstring dengeleme",
+      "Brace ile yük yönetimi"
+    ]
+  },
+  {
+    id: "shin_mtss",
+    region: "Ayak Bileği",
+    title: "Kaval Kemiği Stres Sendromu",
+    latinName: "Medial Tibial Stress Syndrome (Shin Splints)",
+    hotspotCoordinates: { x: 1.75, y: 2.6, z: 0.2 },
+    cameraTarget: { x: 1.75, y: 2.6, z: 2.2 },
+    severity: "Orta",
+    category: "Kas-Tendon",
+    description: "Kaval kemiği iç kenarı boyunca aşırı yüklenmeye bağlı periost ve kas yapışma yeri irritasyonudur.",
+    symptoms: [
+      "Kaval iç kenarında yaygın sızlama",
+      "Koşu başında ağrı, ısınmayla hafifleme veya artma",
+      "Dokunmakla hassasiyet",
+      "Sert zeminde şiddetlenme"
+    ],
+    affectedStructures: ["Tibia medial periost", "M. Soleus", "M. Tibialis Posterior"],
+    aggravatingMovements: [
+      "Ani koşu mesafesi artışı",
+      "Sert zemin koşusu",
+      "Yetersiz ayakkabı desteği"
+    ],
+    rehabFocus: [
+      "Yük azaltma + kademeli dönüş",
+      "Baldır güçlendirme",
+      "Ayakkabı / yüzey düzenlemesi"
+    ]
+  },
+  {
+    id: "calf_gastrocnemius_strain",
+    region: "Ayak Bileği",
+    title: "Gastrocnemius (Baldır) Zorlanması",
+    latinName: "Gastrocnemius Strain (Tennis Leg)",
+    hotspotCoordinates: { x: 1.7, y: 2.3, z: -0.35 },
+    cameraTarget: { x: 1.7, y: 2.3, z: 2.2 },
+    severity: "Yüksek",
+    category: "Kas-Tendon",
+    description: "Baldırın üst-iç kısmındaki gastrocnemius kasının ani gerilmeyle zorlanmasıdır; 'tennis leg' olarak da bilinir.",
+    symptoms: [
+      "Baldırda ani bıçak saplanır gibi ağrı",
+      "Parmak ucuna kalkmada güçlük",
+      "Yürürken aksama",
+      "Baldırda şişlik / morarma riski"
+    ],
+    affectedStructures: ["M. Gastrocnemius (medial head)", "Musculotendinous junction"],
+    aggravatingMovements: [
+      "Ani sprint / yön değiştirme",
+      "Eksik ısınma ile zıplama",
+      "Dorsifleksiyonlu yüklenme"
+    ],
+    rehabFocus: [
+      "PEACE & LOVE erken dönem",
+      "Kademeli calf raise",
+      "Eksantrik yükleme"
+    ]
+  },
+
+  // ═══════════════════════════════════════════════════════════════
+  // J. ÜRÜN GENİŞLETMESİ (+13 → 45)
+  // ═══════════════════════════════════════════════════════════════
+  {
+    id: "shoulder_rotator_cuff_tear",
+    region: "Omuz",
+    title: "Rotator Cuff Yırtığı",
+    latinName: "Rotator Cuff Tear (Supraspinatus)",
+    hotspotCoordinates: { x: 3.4, y: 13.3, z: -0.15 },
+    cameraTarget: { x: 3.4, y: 13.3, z: 3.0 },
+    severity: "Yüksek",
+    category: "Kas-Tendon",
+    description: "Omuz rotator cuff tendonlarının (çoğunlukla supraspinatus) kısmi veya tam kat yırtılmasıdır. Sıkışmadan daha fazla güç kaybı yapar.",
+    symptoms: [
+      "Kolu yana kaldırmada belirgin güçsüzlük",
+      "Gece omuz ağrısı",
+      "Baş üstü harekette keskin ağrı",
+      "Omuzda 'boşalma' hissi"
+    ],
+    affectedStructures: ["M. Supraspinatus Tendonu", "Rotator Cuff", "Subakromiyal Boşluk"],
+    aggravatingMovements: [
+      "Baş üstü kaldırma",
+      "Yana abdüksiyon",
+      "Ağır çanta taşıma"
+    ],
+    rehabFocus: [
+      "Skapular stabilizasyon",
+      "Rotator cuff izometriği",
+      "Yük yönetimi / cerrahi değerlendirme"
+    ]
+  },
+  {
+    id: "shoulder_ac_joint_sprain",
+    region: "Omuz",
+    title: "AC Eklem Burkulması",
+    latinName: "Acromioclavicular Joint Sprain",
+    hotspotCoordinates: { x: 2.8, y: 13.8, z: 0.25 },
+    cameraTarget: { x: 2.8, y: 13.8, z: 3.0 },
+    severity: "Orta",
+    category: "Eklem-Bağ",
+    description: "Köprücük kemiği ile akromiyon arasındaki eklemin düşme veya darbe ile burkulmasıdır. Omuzun 'üst kenarında' lokalize ağrı tipiktir.",
+    symptoms: [
+      "Omuz üstünde noktasal ağrı",
+      "Çanta askısıyla artma",
+      "Kol çapraz göğüse çekilince batma",
+      "Bazen omuz üstünde şişlik"
+    ],
+    affectedStructures: ["Art. Acromioclavicularis", "Lig. Acromioclaviculare"],
+    aggravatingMovements: [
+      "Cross-body addüksiyon",
+      "Push-up",
+      "Omuz üstüne yüklenme"
+    ],
+    rehabFocus: [
+      "Erken korunmalı hareket",
+      "Skapular kontrol",
+      "Kademeli yükleme"
+    ]
+  },
+  {
+    id: "shoulder_scapular_dyskinesis",
+    region: "Omuz",
+    title: "Skapular Diskinezi",
+    latinName: "Scapular Dyskinesis",
+    hotspotCoordinates: { x: 2.0, y: 12.8, z: -0.7 },
+    cameraTarget: { x: 2.0, y: 12.8, z: 3.0 },
+    severity: "Düşük",
+    category: "Kas-Tendon",
+    description: "Kürek kemiğinin hareket kontrolünün bozulmasıdır; omuz ağrısı ve yorgunlukla birlikte sırt-omuz geçişinde hissedilir.",
+    symptoms: [
+      "Kürek kemiği çevresinde yorgunluk / sızlama",
+      "Kol kaldırınca skapulanın 'kanatlanması'",
+      "Uzun süre oturunca artan ağrı",
+      "Omuzda kontrolsüzlük hissi"
+    ],
+    affectedStructures: ["M. Serratus Anterior", "M. Trapezius", "Scapula"],
+    aggravatingMovements: [
+      "Tekrarlayan baş üstü iş",
+      "Kötü postürlü oturuş",
+      "Tek taraflı çanta"
+    ],
+    rehabFocus: [
+      "Serratus / alt trap aktivasyonu",
+      "Postür eğitimi",
+      "Skapular ritim egzersizleri"
+    ]
+  },
+  {
+    id: "elbow_olecranon_bursitis",
+    region: "Dirsek",
+    title: "Olekranon Bursiti",
+    latinName: "Olecranon Bursitis",
+    hotspotCoordinates: { x: 5.5, y: 9.2, z: -0.35 },
+    cameraTarget: { x: 5.5, y: 9.2, z: 2.8 },
+    severity: "Orta",
+    category: "Kıkırdak-Bursa",
+    description: "Dirsek arkasındaki bursanın sürtünme veya darbe ile şişmesidir. 'Öğrenci dirseği' olarak da bilinir.",
+    symptoms: [
+      "Dirsek arkasında şişlik",
+      "Dirseğe yaslanınca ağrı",
+      "Kızarıklık (enfeksiyon şüphesinde)",
+      "Hareket sonlarında gerilme"
+    ],
+    affectedStructures: ["Bursa Olecrani", "Olecranon"],
+    aggravatingMovements: [
+      "Dirseğe yaslanma",
+      "Tekrarlayan dirsek ekstansiyonu",
+      "Darbe"
+    ],
+    rehabFocus: [
+      "Baskıyı azaltma",
+      "Koruyucu ped",
+      "Enfeksiyon belirtilerinde hekim"
+    ]
+  },
+  {
+    id: "wrist_trigger_finger",
+    region: "El Bileği",
+    title: "Tetik Parmak",
+    latinName: "Trigger Finger (Stenosing Tenosynovitis)",
+    hotspotCoordinates: { x: 6.8, y: 6.2, z: 0.35 },
+    cameraTarget: { x: 6.8, y: 6.2, z: 2.5 },
+    severity: "Orta",
+    category: "Kas-Tendon",
+    description: "Parmak fleksör tendonunun makarada takılmasıdır; parmak açılırken 'takılıp fırlama' hissi tipiktir.",
+    symptoms: [
+      "Parmakta takılma / kilitlenme",
+      "Sabah sertliği",
+      "Avuç içinde nodül hassasiyeti",
+      "Parmağı açarken tıklama"
+    ],
+    affectedStructures: ["Flexor Tendon Sheath", "A1 Pulley"],
+    aggravatingMovements: [
+      "Tekrarlayan kavrama",
+      "Araç kullanma",
+      "Sıkı yumruk"
+    ],
+    rehabFocus: [
+      "Tendon kaydırma",
+      "Atel / gece koruması",
+      "Yük azaltma"
+    ]
+  },
+  {
+    id: "neck_whiplash_strain",
+    region: "Boyun",
+    title: "Whiplash Tipi Boyun Zorlanması",
+    latinName: "Cervical Acceleration-Deceleration (Whiplash) Strain",
+    hotspotCoordinates: { x: 0.0, y: 14.2, z: -0.4 },
+    cameraTarget: { x: 0.0, y: 14.2, z: 2.8 },
+    severity: "Yüksek",
+    category: "Kas-Tendon",
+    description: "Ani hızlanma-yavaşlama ile boyun yumuşak dokularının zorlanmasıdır; trafik kazası sonrası sık görülür.",
+    symptoms: [
+      "Boyun ve ense ağrısı",
+      "Baş hareketlerinde kısıtlılık",
+      "Baş ağrısı",
+      "Omuzlara yayılan sızlama"
+    ],
+    affectedStructures: ["M. Sternocleidomastoid", "M. Trapezius", "Servikal Bağlar"],
+    aggravatingMovements: [
+      "Ani baş çevirme",
+      "Uzun süre sabit bakış",
+      "Öne eğik postür"
+    ],
+    rehabFocus: [
+      "Erken nazik mobilizasyon",
+      "Derin boyun fleksörleri",
+      "Postür ve sevkiyat"
+    ]
+  },
+  {
+    id: "lumbar_facet_syndrome",
+    region: "Bel",
+    title: "Lomber Faset Sendromu",
+    latinName: "Lumbar Facet Joint Syndrome",
+    hotspotCoordinates: { x: 0.35, y: 9.6, z: -0.55 },
+    cameraTarget: { x: 0.35, y: 9.6, z: 3.0 },
+    severity: "Orta",
+    category: "Omurga-Sinir",
+    description: "Bel omurlarının küçük eklemlerinde mekanik ağrıdır; genellikle bacağa tam siyatik gibi yayılmaz, belde lokalize kalır.",
+    symptoms: [
+      "Belde tek taraflı noktasal ağrı",
+      "Geriye eğilince artma",
+      "Sabah tutukluğu",
+      "Bacağa sınırlı veya yok yayılım"
+    ],
+    affectedStructures: ["Lomber Faset Eklemler", "M. Multifidus"],
+    aggravatingMovements: [
+      "Ekstansiyon / rotasyon",
+      "Uzun ayakta durma",
+      "Yataktan kalkma"
+    ],
+    rehabFocus: [
+      "Fleksiyon temelli rahatlama",
+      "Core stabilizasyon",
+      "Mobilizasyon"
+    ]
+  },
+  {
+    id: "abdomen_rectus_strain",
+    region: "Bel",
+    title: "Rektus Abdominis Zorlanması",
+    latinName: "Rectus Abdominis Strain",
+    hotspotCoordinates: { x: 0.0, y: 10.2, z: 0.85 },
+    cameraTarget: { x: 0.0, y: 10.2, z: 3.2 },
+    severity: "Orta",
+    category: "Kas-Tendon",
+    description: "Karın ön duvarındaki rektus kasının aşırı gerilmesi veya mikro yırtığıdır; 'karın kasım ağrıyor' şikayetinde sık düşünülür.",
+    symptoms: [
+      "Karın ön yüzünde lokalize ağrı",
+      "Oturup kalkınca / öksürünce artma",
+      "Üst veya alt karında hassasiyet",
+      "Core egzersiz sonrası batma"
+    ],
+    affectedStructures: ["M. Rectus Abdominis", "Linea Alba"],
+    aggravatingMovements: [
+      "Mekik / crunch",
+      "Ağır kaldırma",
+      "Öksürme / hapşırma"
+    ],
+    rehabFocus: [
+      "Yükü azaltma",
+      "Nefes ve core kontrol",
+      "Kademeli güçlendirme"
+    ]
+  },
+  {
+    id: "knee_patellar_tendinopathy",
+    region: "Diz",
+    title: "Patellar Tendinopati (Jumper’s Knee)",
+    latinName: "Patellar Tendinopathy",
+    hotspotCoordinates: { x: 1.8, y: 4.15, z: 0.55 },
+    cameraTarget: { x: 1.8, y: 4.15, z: 2.5 },
+    severity: "Orta",
+    category: "Kas-Tendon",
+    description: "Diz kapağı altındaki patellar tendonun aşırı kullanımına bağlı tendinopatidir; sıçrama sporlarında sık görülür.",
+    symptoms: [
+      "Diz kapağı altında noktasal ağrı",
+      "Zıplama / merdivenle artma",
+      "Isınmayla hafifleyip sonra artma",
+      "Tendon üzerinde hassasiyet"
+    ],
+    affectedStructures: ["Ligamentum Patellae", "Patella Alt Kutbu"],
+    aggravatingMovements: [
+      "Sıçrama",
+      "Derin squat",
+      "Koşu tempo artışı"
+    ],
+    rehabFocus: [
+      "İzometrik / eksantrik yükleme",
+      "Decline squat progresyonu",
+      "Yük yönetimi"
+    ]
+  },
+  {
+    id: "hip_adductor_strain",
+    region: "Kalça",
+    title: "Addüktör (Kasık) Zorlanması",
+    latinName: "Adductor Muscle Strain",
+    hotspotCoordinates: { x: 1.2, y: 7.4, z: 0.35 },
+    cameraTarget: { x: 1.2, y: 7.4, z: 2.8 },
+    severity: "Orta",
+    category: "Kas-Tendon",
+    description: "Uyluk iç yanındaki addüktör kas grubunun ani gerilme veya tekme ile zorlanmasıdır; kasık ağrısı yapar.",
+    symptoms: [
+      "Kasık / uyluk iç yan ağrısı",
+      "Bacakları birleştirince artma",
+      "Sprint veya yön değiştirmede batma",
+      "İç uylukta hassasiyet"
+    ],
+    affectedStructures: ["M. Adductor Longus", "M. Adductor Magnus"],
+    aggravatingMovements: [
+      "Ani yön değiştirme",
+      "Tekme",
+      "Bacak açma germe"
+    ],
+    rehabFocus: [
+      "Addüktör izometriği",
+      "Kademeli güçlendirme",
+      "Kalça stabilizasyonu"
+    ]
+  },
+  {
+    id: "ankle_peroneal_tendinopathy",
+    region: "Ayak Bileği",
+    title: "Peroneal Tendinopati",
+    latinName: "Peroneal (Fibularis) Tendinopathy",
+    hotspotCoordinates: { x: 2.15, y: 1.5, z: -0.15 },
+    cameraTarget: { x: 2.15, y: 1.5, z: 2.0 },
+    severity: "Orta",
+    category: "Kas-Tendon",
+    description: "Ayak bileği dış yanındaki peroneal tendonların aşırı kullanım veya tekrarlayan burkulma sonrası irritasyonudur.",
+    symptoms: [
+      "Ayak bileği dışında sızlama",
+      "Düzensiz zeminde artma",
+      "Tendon boyunca hassasiyet",
+      "Tekrarlayan burkulma öyküsü"
+    ],
+    affectedStructures: ["M. Fibularis Longus", "M. Fibularis Brevis"],
+    aggravatingMovements: [
+      "İnversiyon stresi",
+      "Uzun yürüyüş / koşu",
+      "Dengesiz zemin"
+    ],
+    rehabFocus: [
+      "Fibularis güçlendirme",
+      "Denge / propriyosepsiyon",
+      "Ayakkabı desteği"
+    ]
+  },
+  {
+    id: "foot_morton_neuroma",
+    region: "Ayak",
+    title: "Morton Nöroması",
+    latinName: "Morton’s Neuroma",
+    hotspotCoordinates: { x: 1.55, y: 0.35, z: 0.45 },
+    cameraTarget: { x: 1.55, y: 0.35, z: 2.0 },
+    severity: "Orta",
+    category: "Omurga-Sinir",
+    description: "Ayak parmakları arasındaki sinirin sıkışmasıdır; özellikle 3–4. parmak aralığında yanıcı ağrı ve 'çakıl taşı' hissi tipiktir.",
+    symptoms: [
+      "Parmak diplerinde yanıcı ağrı",
+      "Ayakkabıda çakıl taşı hissi",
+      "Parmaklara yayılan karıncalanma",
+      "Dar ayakkabıyla şiddetlenme"
+    ],
+    affectedStructures: ["Interdigital Nerve", "Metatarsal Heads"],
+    aggravatingMovements: [
+      "Dar burunlu ayakkabı",
+      "Yüksek topuk",
+      "Uzun yürüyüş"
+    ],
+    rehabFocus: [
+      "Geniş burun ayakkabı",
+      "Metatarsal ped",
+      "Ayak intrinsik güçlendirme"
+    ]
+  },
+  {
+    id: "chest_costochondritis",
+    region: "Omuz",
+    title: "Kostokondrit (Göğüs Kıkırdak Ağrısı)",
+    latinName: "Costochondritis",
+    hotspotCoordinates: { x: 1.1, y: 12.0, z: 0.95 },
+    cameraTarget: { x: 1.1, y: 12.0, z: 3.2 },
+    severity: "Orta",
+    category: "Kıkırdak-Bursa",
+    description: "Kaburga-sternum birleşimindeki kıkırdağın inflamasyonudur; göğüs ön yüzünde batıcı ağrı yapar, kalp kaynaklı ağrıdan ayırt edilmelidir.",
+    symptoms: [
+      "Göğüs kemiği kenarında noktasal ağrı",
+      "Derin nefes / öksürükle artma",
+      "Baskıyla hassasiyet",
+      "Kol hareketiyle bazen artma"
+    ],
+    affectedStructures: ["Costochondral Junction", "Sternum", "Kaburga Kıkırdağı"],
+    aggravatingMovements: [
+      "Derin inspirasyon",
+      "Göğüs germe",
+      "Ağır itme"
+    ],
+    rehabFocus: [
+      "Aktivite modifikasyonu",
+      "Postür ve nefes",
+      "Kırmızı bayrakta acil değerlendirme"
+    ]
+  },
+
+  // ═══════════════════════════════════════════════════════════════
+  // K. KRİTİK KIRMIZI BAYRAKLAR (+2)
+  // ═══════════════════════════════════════════════════════════════
+  {
+    id: "ankle_achilles_rupture",
+    region: "Ayak Bileği",
+    title: "Aşil Tendonu Tam Kopması",
+    latinName: "Achilles Tendon Complete Rupture",
+    hotspotCoordinates: { x: 1.5, y: 1.4, z: -0.55 },
+    cameraTarget: { x: 1.5, y: 1.4, z: 2.0 },
+    severity: "Kritik",
+    category: "Kas-Tendon",
+    description: "Aşil tendonunun ani yüklenme ile tam kat kopmasıdır. Tendinopatiden farklı olarak ani 'snap' hissi, yürüyememe ve acil ortopedi değerlendirmesi gerektirir.",
+    symptoms: [
+      "Baldır arkasında ani bıçak saplanır / 'şaplak' hissi",
+      "Parmak ucuna kalkamama",
+      "Yürümede belirgin aksama",
+      "Tendon boyunca boşluk hissi"
+    ],
+    affectedStructures: ["Tendo Calcaneus (Aşil Tendonu)", "M. Gastrocnemius", "M. Soleus"],
+    aggravatingMovements: [
+      "Ani sprint / yön değiştirme",
+      "Zıplama sonrası iniş",
+      "Eksik ısınma ile yüklenme"
+    ],
+    rehabFocus: [
+      "Acil ortopedi / immobilizasyon",
+      "Cerrahi veya konservatif protokol (uzman kararı)",
+      "Kademeli yükleme rehabilitasyonu"
+    ]
+  },
+  {
+    id: "lumbar_cauda_equina",
+    region: "Bel",
+    title: "Kauda Equina Sendromu",
+    latinName: "Cauda Equina Syndrome",
+    hotspotCoordinates: { x: 0.0, y: 9.2, z: -0.65 },
+    cameraTarget: { x: 0.0, y: 9.2, z: 3.0 },
+    severity: "Kritik",
+    category: "Omurga-Sinir",
+    description: "Bel omuriliğinin alt ucundaki sinir demetinin ciddi baskılanmasıdır. İdrar/gaita kontrol kaybı ve eyer uyuşması ile acil nöroşirürji gerektiren kırmızı bayraktır.",
+    symptoms: [
+      "Eyer bölgesinde (oturma alanı) uyuşma",
+      "İdrar kaçırma veya yapamama",
+      "Gaita kontrolünde bozulma",
+      "İki taraflı bacak güçsüzlüğü / ağrı"
+    ],
+    affectedStructures: ["Cauda Equina", "Lomber Sinir Kökleri", "Lomber Disk"],
+    aggravatingMovements: [
+      "Bel fıtığı ilerlemesi",
+      "Travma / ani yüklenme",
+      "İlerleyici nörolojik kayıp"
+    ],
+    rehabFocus: [
+      "ACİL hastane / nöroşirürji",
+      "Fizyoterapi yalnızca cerrahi sonrası protokolle",
+      "Kendi kendine beklemeyin — zaman kritiktir"
+    ]
+  }
+];
+
+/**
+ * Compact AI catalog — optionally filtered by region(s).
+ * Shorter fields = better local-model focus.
+ */
+export function getPathologyCatalogForAI({ regions } = {}) {
+  let list = PATHOLOGIES_DATABASE;
+  if (regions?.length) {
+    const set = new Set(regions);
+    list = list.filter((p) => set.has(p.region));
+  }
+  return list.map((p) => ({
+    id: p.id,
+    region: p.region,
+    title: (p.title || '').split('(')[0].trim(),
+    cue: String(p.symptoms?.[0] || '').slice(0, 70),
+  }));
+}
+
+/** Group compact entries by region for prompts. */
+export function getCatalogGroupedByRegion(regions) {
+  const entries = getPathologyCatalogForAI({ regions });
+  const map = {};
+  entries.forEach((e) => {
+    if (!map[e.region]) map[e.region] = [];
+    map[e.region].push(e);
+  });
+  return map;
+}
+
+// Yardımcı Fonksiyonlar
+export function getPathologyById(id) {
+  return PATHOLOGIES_DATABASE.find(p => p.id === id);
+}
+
+export function getPathologiesByRegion(region) {
+  return PATHOLOGIES_DATABASE.filter(p => p.region === region);
+}
+
+export function getPathologiesBySeverity(severity) {
+  return PATHOLOGIES_DATABASE.filter(p => p.severity === severity);
+}
+
+export function getPathologiesByCategory(category) {
+  return PATHOLOGIES_DATABASE.filter(p => p.category === category);
+}
+
+export function getAllRegions() {
+  return [...new Set(PATHOLOGIES_DATABASE.map(p => p.region))];
+}
+
+export function getAllCategories() {
+  return [...new Set(PATHOLOGIES_DATABASE.map(p => p.category))];
+}
